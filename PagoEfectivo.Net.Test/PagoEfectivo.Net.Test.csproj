@@ -57,6 +57,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PagoEfectivo.Net.Persistance\PagoEfectivo.Net.Persistance.csproj">
+      <Project>{11f223cb-0a26-4058-9cbc-3881c39394fa}</Project>
+      <Name>PagoEfectivo.Net.Persistance</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PagoEfectivo.Net\PagoEfectivo.Net.csproj">
       <Project>{23226697-b54b-4e26-a9a6-ec1bb19e3260}</Project>
       <Name>PagoEfectivo.Net</Name>

@@ -7,6 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PagoEfectivo.Net", "PagoEfe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PagoEfectivo.Net.Test", "PagoEfectivo.Net.Test\PagoEfectivo.Net.Test.csproj", "{FBA34C03-196C-479E-B05B-54574E08EC70}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PagoEfectivo.Net.Persistance", "PagoEfectivo.Net.Persistance\PagoEfectivo.Net.Persistance.csproj", "{11F223CB-0A26-4058-9CBC-3881C39394FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{7DB1C482-B854-4E08-A9DC-4F803B4A6135}"
+	ProjectSection(SolutionItems) = preProject
+		PagoEfectivoDb.sql = PagoEfectivoDb.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +28,10 @@ Global
 		{FBA34C03-196C-479E-B05B-54574E08EC70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBA34C03-196C-479E-B05B-54574E08EC70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBA34C03-196C-479E-B05B-54574E08EC70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11F223CB-0A26-4058-9CBC-3881C39394FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11F223CB-0A26-4058-9CBC-3881C39394FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11F223CB-0A26-4058-9CBC-3881C39394FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11F223CB-0A26-4058-9CBC-3881C39394FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

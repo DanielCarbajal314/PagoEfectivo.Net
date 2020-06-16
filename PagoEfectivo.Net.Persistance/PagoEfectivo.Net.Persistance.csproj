@@ -4,14 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{23226697-B54B-4E26-A9A6-EC1BB19E3260}</ProjectGuid>
+    <ProjectGuid>{11F223CB-0A26-4058-9CBC-3881C39394FA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PagoEfectivo.Net</RootNamespace>
-    <AssemblyName>PagoEfectivo.Net</AssemblyName>
+    <RootNamespace>PagoEfectivo.Net.Persistance</RootNamespace>
+    <AssemblyName>PagoEfectivo.Net.Persistance</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,13 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="RestSharp, Version=106.11.4.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.106.11.4\lib\net452\RestSharp.dll</HintPath>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.35\lib\net461\Dapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,23 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Authentication\AuthenticateClientFactory.cs" />
-    <Compile Include="Bootstrap\ConfigurationSettings.cs" />
-    <Compile Include="Authentication\AuthenticationRequest.cs" />
-    <Compile Include="Authentication\AuthenticationResponse.cs" />
-    <Compile Include="DataContracts\PaymentHappenedOnPagoEfectivo.cs" />
-    <Compile Include="DataContracts\RegisterPayment.cs" />
-    <Compile Include="DataContracts\RegisterPaymentResponse.cs" />
-    <Compile Include="DataTransformation\RegisterPaymentTransformation.cs" />
-    <Compile Include="Models\RegisterCIPRequest.cs" />
-    <Compile Include="Models\RegisterCIPResponse.cs" />
-    <Compile Include="PagoEfectivoClient.cs" />
+    <Compile Include="DataContracts\RegisterPaymentOnPagoEfectivo.cs" />
+    <Compile Include="DataContracts\UpdateCiffOnPagoEfectivoPayment.cs" />
+    <Compile Include="IDbConnectionExtensions.cs" />
+    <Compile Include="DataContracts\RegisterPagoEfectivoPayment.cs" />
+    <Compile Include="PagoEfectivoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Security\HashExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
