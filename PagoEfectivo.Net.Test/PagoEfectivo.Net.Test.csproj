@@ -65,6 +65,10 @@
       <Project>{23226697-b54b-4e26-a9a6-ec1bb19e3260}</Project>
       <Name>PagoEfectivo.Net</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PagoEfectivo\PagoEfectivo.csproj">
+      <Project>{efcfa6f5-0fb4-4ac1-9c25-c5ce5c8a4178}</Project>
+      <Name>PagoEfectivo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

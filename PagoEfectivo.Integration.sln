@@ -14,6 +14,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{7DB1C482-B85
 		PagoEfectivoDb.sql = PagoEfectivoDb.sql
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PagoEfectivo.WepApi", "PagoEfectivo.WepApi\PagoEfectivo.WepApi.csproj", "{A58E5FC1-78A0-4F90-939D-671A0438D09B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PagoEfectivo", "PagoEfectivo\PagoEfectivo.csproj", "{EFCFA6F5-0FB4-4AC1-9C25-C5CE5C8A4178}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +36,14 @@ Global
 		{11F223CB-0A26-4058-9CBC-3881C39394FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11F223CB-0A26-4058-9CBC-3881C39394FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11F223CB-0A26-4058-9CBC-3881C39394FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A58E5FC1-78A0-4F90-939D-671A0438D09B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A58E5FC1-78A0-4F90-939D-671A0438D09B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A58E5FC1-78A0-4F90-939D-671A0438D09B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A58E5FC1-78A0-4F90-939D-671A0438D09B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFCFA6F5-0FB4-4AC1-9C25-C5CE5C8A4178}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFCFA6F5-0FB4-4AC1-9C25-C5CE5C8A4178}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFCFA6F5-0FB4-4AC1-9C25-C5CE5C8A4178}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFCFA6F5-0FB4-4AC1-9C25-C5CE5C8A4178}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

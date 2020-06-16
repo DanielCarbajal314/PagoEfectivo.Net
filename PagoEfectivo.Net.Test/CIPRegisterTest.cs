@@ -152,5 +152,28 @@ namespace PagoEfectivo.Net.Test
             });
         }
 
+        [TestMethod]
+        public void FinalIntegration() 
+        {
+            PagoEfectivoService service = new PagoEfectivoService();
+            service.RegisterNewPayment(new RegisterPayment
+            {
+                AdditionalData = "Last Payment",
+                AdminEmail = "Daniel.carbajal@pucp.edu.pe",
+                Amount = 1001,
+                Currency = Currency.PEN,
+                DateExpiry = new DateTime(2021, 1, 3),
+                PaymentConcept = "Food on Drinks",
+                UserCodeCountry = "PE",
+                UserCountry = "PERU",
+                UserDocumentNumber = "70007800",
+                UserDocumentType = UserDocumentType.DNI,
+                UserEmail = "dcarbajal@number8.com",
+                UserLastName = "Carbajal",
+                UserName = "Daniel",
+                UserPhone = "980784506",
+                UserUbigeo = "150101"
+            });
+        }
     }
 }
