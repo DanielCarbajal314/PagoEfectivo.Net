@@ -42,7 +42,9 @@ namespace PagoEfectivo.Net.DataTransformation
                 CipUrl = response.Data.CipUrl,
                 Currency = response.Data.Currency,
                 DateExpiry = response.Data.DateExpiry,
-                TransactionCode = response.Data.TransactionCode
+                TransactionCode = response.Data.TransactionCode,
+                Code = response.Code,
+                Message = response.Message
             };
         }
     }

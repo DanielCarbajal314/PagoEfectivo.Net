@@ -14,5 +14,7 @@ namespace PagoEfectivo.Net.DataContracts
         public string TransactionCode { get; set; }
         public DateTime DateExpiry { get; set; }
         public string CipUrl { get; set; }
+        public string Code { get; set; }
+        public string Message { get; set; }
     }
 }

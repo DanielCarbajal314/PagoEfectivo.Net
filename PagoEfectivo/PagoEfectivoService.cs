@@ -15,7 +15,7 @@ namespace PagoEfectivo
         private readonly PagoEfectivoRepository repository = new PagoEfectivoRepository();
         private readonly PagoEfectivoClient client = new PagoEfectivoClient();
 
-        public void RegisterNewPayment(RegisterPayment registerPayment) 
+        public RegisterPaymentResponse RegisterNewPayment(RegisterPayment registerPayment) 
         {
             var transactionCode = repository.RegisterPagoEfectivoPayment(new RegisterPagoEfectivoPayment
             {
@@ -43,6 +43,7 @@ namespace PagoEfectivo
                 TransaccionCode = transactionCode,
                 CipUrl = result.CipUrl
             });
+            return result;
         }
     }
 }
