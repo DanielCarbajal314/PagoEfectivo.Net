@@ -21,5 +21,14 @@ namespace PagoEfectivo.Net.Security
             }
             return Sb.ToString();
         }
+
+        public static string GetSignature(this string value, string key)
+        {
+            using (var hasher = new HMACSHA256(Encoding.ASCII.GetBytes(key)))
+            {
+                var hashsing = hasher.ComputeHash(Encoding.Default.GetBytes(value));
+                return string.Join("", hashsing.ToList().Select(b => b.ToString("x2")).ToArray());
+            }
+        }
     }
 }
