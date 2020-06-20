@@ -252,6 +252,10 @@
       <Project>{11f223cb-0a26-4058-9cbc-3881c39394fa}</Project>
       <Name>PagoEfectivo.Net.Persistance</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PagoEfectivo.Net\PagoEfectivo.Net.csproj">
+      <Project>{23226697-B54B-4E26-A9A6-EC1BB19E3260}</Project>
+      <Name>PagoEfectivo.Net</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

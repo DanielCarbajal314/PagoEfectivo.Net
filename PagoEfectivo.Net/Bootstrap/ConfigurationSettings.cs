@@ -7,7 +7,7 @@ using System.Configuration;
 
 namespace PagoEfectivo.Net
 {
-    internal class ConfigurationSettings
+    public class ConfigurationSettings
     {
         public string AccessKey
         {
