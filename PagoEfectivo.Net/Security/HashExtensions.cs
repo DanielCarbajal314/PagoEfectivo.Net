@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace PagoEfectivo.Net.Security
 {
-    internal static class HashExtensions
+    public static class HashExtensions
     {
-        public static String ToSha256(this string value)
+        internal static String ToSha256(this string value)
         {
             StringBuilder Sb = new StringBuilder();
             using (SHA256 hash = SHA256.Create())

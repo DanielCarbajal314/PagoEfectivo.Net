@@ -22,7 +22,7 @@ namespace PagoEfectivo.WepApi.Filters
                 using (var stream = new StreamReader(streamResult))
                 {
                     stream.BaseStream.Position = 0;
-                    return stream.ReadToEnd();
+                    return stream.ReadToEnd().Replace(" ","").Replace(" ","").Replace(Environment.NewLine,"");
                 }
             }
             return "";

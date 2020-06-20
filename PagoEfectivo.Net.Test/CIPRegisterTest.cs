@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PagoEfectivo.Net.DataContracts;
 using PagoEfectivo.Net.Persistance;
 using PagoEfectivo.Net.Persistance.DataContracts;
+using PagoEfectivo.Net.Security;
 
 namespace PagoEfectivo.Net.Test
 {
@@ -175,5 +176,16 @@ namespace PagoEfectivo.Net.Test
                 UserUbigeo = "150101"
             });
         }
+
+        [TestMethod]
+        public void TestSignatureValidator() 
+        {
+            var key = "MsB3V0seHJY2gcdly7LsNVtXJF+QLGO+l/Oc8z4j";
+            var signatureExpected = "89138e0dd0681d2463467160d41a4a9b0b0257ba14af06a7ab441b693b57699e";
+            var body = "{\"EventType\":\"Test.PCDaniel\",\"OperationNumber\":2123,\"Data\":{\"Cip\":1,\"Currency\":\"PEN\",\"Amount\":1001.00,\"PaymentDate\":\"2020-06-18T23:28:45.1220545-05:00\",\"TransactionCode\":84}}";
+            var signatureProduced = body.GetSignature(key);
+            Assert.AreEqual(signatureExpected, signatureProduced);
+        }
+
     }
 }
