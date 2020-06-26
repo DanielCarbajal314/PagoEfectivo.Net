@@ -1,4 +1,5 @@
-﻿using PagoEfectivo.Net.Persistance;
+﻿using PagoEfectivo.Net.DataContracts;
+using PagoEfectivo.Net.Persistance;
 using PagoEfectivo.Net.Persistance.DataContracts;
 using PagoEfectivo.WepApi.Filters;
 using System;
@@ -14,10 +15,20 @@ namespace PagoEfectivo.WepApi.Controllers
     {
         [HttpPost]
         [PagoEfectivoHeaderValidator]
-        public void Post(RegisterPaymentOnPagoEfectivo registerPaymentOnPagoEfectivo)
+        public object Post(PaymentHappenedOnPagoEfectivo registerPaymentOnPagoEfectivo)
         {
             var repo = new PagoEfectivoRepository();
-            repo.RegisterPaymentOnPagoEfectivo(registerPaymentOnPagoEfectivo);
+            repo.RegisterPaymentOnPagoEfectivo(new RegisterPaymentOnPagoEfectivo 
+            {
+                EventType = registerPaymentOnPagoEfectivo.EventType,
+                OperationNumber = registerPaymentOnPagoEfectivo.OperationNumber,
+                PaymentDate = registerPaymentOnPagoEfectivo.Data.PaymentDate,
+                TransaccionCode = registerPaymentOnPagoEfectivo.Data.TransactionCode
+            });
+            return new
+            {
+                message = "It Was ok!"
+            };
         }
     }
 }
