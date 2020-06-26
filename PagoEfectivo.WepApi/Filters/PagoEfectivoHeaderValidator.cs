@@ -18,8 +18,8 @@ namespace PagoEfectivo.WepApi.Filters
         public override void OnActionExecuting(HttpActionContext actionExecutedContext)
         {
             var expectedSignature = this.getBody(actionExecutedContext).GetSignature(settings.SecretKey);
-            var headerIsInvalid = !actionExecutedContext.Request.Headers.Any(x => x.Key.Equals("PE-Signature")) ||
-                                  !actionExecutedContext.Request.Headers.First(x => x.Key.Equals("PE-Signature")).Value.First().Equals(expectedSignature);
+            var headerIsInvalid = !actionExecutedContext.Request.Headers.Any(x => x.Key.ToLower().Equals("pe-signature")) ||
+                                  !actionExecutedContext.Request.Headers.First(x => x.Key.ToLower().Equals("pe-signature")).Value.First().Equals(expectedSignature);
             if (headerIsInvalid)
             {
                 actionExecutedContext.Response = actionExecutedContext.Request.CreateResponse(
