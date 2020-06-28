@@ -25,6 +25,48 @@
 )
 GO
 
+CREATE TABLE PagoEfectivoPaymentsRequest
+(
+	[Id] NVARCHAR(40) PRIMARY KEY NOT NULL,
+	[Date] DATETIME NOT NULL,
+	[Content] NVARCHAR(MAX),
+	[Signarute] NVARCHAR(100),
+	[ExceptionStack] NVARCHAR(MAX),
+	[ExceptionMessage] NVARCHAR(MAX)
+)
+GO
+
+CREATE PROCEDURE RegisterPagoEfectivoPaymentsRequest
+(
+	@Id NVARCHAR(40),
+	@Date DATETIME,
+	@Content NVARCHAR(MAX),
+	@Signarute NVARCHAR(100)
+)
+AS
+BEGIN
+	INSERT INTO PagoEfectivoPaymentsRequest(Id,[Date],[Content],[Signarute])
+	VALUES (@Id,@Date,@Content,@Signarute)
+END
+
+GO
+
+CREATE PROCEDURE RegisterPaymentHttpException
+(
+	@Id NVARCHAR(40),
+	@ExceptionStack NVARCHAR(MAX),
+	@ExceptionMessage NVARCHAR(MAX)
+)
+AS
+BEGIN
+	UPDATE PagoEfectivoPaymentsRequest
+	SET ExceptionStack = @ExceptionStack,
+		ExceptionMessage = @ExceptionMessage
+	WHERE Id like @Id
+END
+
+GO
+
 CREATE PROCEDURE RegisterPagoEfectivoPayments
 (
 	@AdditionalData VARCHAR(50),

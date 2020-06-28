@@ -26,6 +26,17 @@ namespace PagoEfectivo.Net.Persistance
             connection.Execute("RegisterPaymentOnPagoEfectivoPayments", registerPaymentOnPagoEfectivo, commandType: CommandType.StoredProcedure);
         }
 
-        
+        internal static void RegisterPagoEfectivoPaymentHttpRequest(this IDbConnection connection, RegisterPaymentHttpRequest registerPaymentHttpRequest)
+        {
+            connection.Execute("RegisterPagoEfectivoPaymentsRequest", registerPaymentHttpRequest, commandType: CommandType.StoredProcedure);
+        }
+
+        internal static void RegisterPagoEfectivoPaymentHttpException(this IDbConnection connection, RegisterPaymentHttpException registerPaymentHttpException)
+        {
+            connection.Execute("RegisterPaymentHttpException", registerPaymentHttpException, commandType: CommandType.StoredProcedure);
+        }
+
+
+
     }
 }

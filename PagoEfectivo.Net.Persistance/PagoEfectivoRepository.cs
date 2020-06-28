@@ -36,5 +36,22 @@ namespace PagoEfectivo.Net.Persistance
                 connection.RegisterPaymentOnPagoEfectivo(registerPaymentOnPagoEfectivo);
             }
         }
+
+        public string RegisterPagoEfectivoPaymentHttpRequest(RegisterPaymentHttpRequest registerPaymentHttpRequest)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.RegisterPagoEfectivoPaymentHttpRequest(registerPaymentHttpRequest);
+                return registerPaymentHttpRequest.Id;
+            }
+        }
+
+        public void RegisterPagoEfectivoPaymentHttpException(RegisterPaymentHttpException registerPaymentHttpException)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.RegisterPagoEfectivoPaymentHttpException(registerPaymentHttpException);
+            }
+        }
     }
 }

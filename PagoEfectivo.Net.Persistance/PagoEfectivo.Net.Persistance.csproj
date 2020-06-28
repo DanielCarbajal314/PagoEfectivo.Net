@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContracts\RegisterPaymentHttpException.cs" />
+    <Compile Include="DataContracts\RegisterPaymentHttpRequest.cs" />
     <Compile Include="DataContracts\RegisterPaymentOnPagoEfectivo.cs" />
     <Compile Include="DataContracts\UpdateCiffOnPagoEfectivoPayment.cs" />
     <Compile Include="IDbConnectionExtensions.cs" />
