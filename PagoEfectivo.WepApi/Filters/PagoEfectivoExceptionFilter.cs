@@ -17,7 +17,6 @@ namespace PagoEfectivo.WepApi.Filters
         public override void OnException(HttpActionExecutedContext context)
         {
             var requestId = HttpContext.Current.Items["HttpRequestId"];
-
             if (requestId != null) 
             {
                 this.pagoEfectivoRepository.RegisterPagoEfectivoPaymentHttpException(new RegisterPaymentHttpException
@@ -27,7 +26,6 @@ namespace PagoEfectivo.WepApi.Filters
                     Id = requestId.ToString()
                 });
             }
-
             context.Response = context.Request.CreateResponse(
                 HttpStatusCode.Unauthorized,
                 new

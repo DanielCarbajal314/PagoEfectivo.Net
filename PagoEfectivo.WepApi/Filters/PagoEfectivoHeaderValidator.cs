@@ -25,7 +25,7 @@ namespace PagoEfectivo.WepApi.Filters
             var bodyContentAsString = this.getBody(actionExecutedContext);
             var expectedSignature = bodyContentAsString.GetSignature(settings.SecretKey);
             var authenticationHeader = this.getAuthenticationHeader(actionExecutedContext);
-            var headerIsInvalid = authenticationHeader.Equals(expectedSignature);
+            var headerIsInvalid = !authenticationHeader.Equals(expectedSignature);
             var httpRequestId = pagoEfectivoRepository.RegisterPagoEfectivoPaymentHttpRequest(new RegisterPaymentHttpRequest
             {
                 Content = bodyContentAsString,

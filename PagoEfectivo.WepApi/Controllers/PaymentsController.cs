@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Filters;
 
 namespace PagoEfectivo.WepApi.Controllers
 {
@@ -15,6 +16,7 @@ namespace PagoEfectivo.WepApi.Controllers
     {
         [HttpPost]
         [PagoEfectivoHeaderValidator]
+        [PagoEfectivoExceptionFilter]
         public object Post(PaymentHappenedOnPagoEfectivo registerPaymentOnPagoEfectivo)
         {
             var repo = new PagoEfectivoRepository();
